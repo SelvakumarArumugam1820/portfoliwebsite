@@ -67,40 +67,133 @@
   background: var(--primary-green);
 }
 
-.socials {
+.desktopActions {
   display: flex;
   align-items: center;
 }
 
-.socialLink {
+.linkedinBtn {
   text-decoration: none;
   font-weight: 700;
-  color: var(--text-primary);
-  padding: 10px 24px;
-  border: 1.5px solid var(--text-primary);
-  border-radius: 100px;
-  transition: var(--transition);
-}
-
-.socialLink:hover {
-  background: var(--text-primary);
-  color: var(--white);
-}
-
-.linkedinBtn {
-  background: #0A66C2;
   color: #fff;
-  border-color: #0A66C2;
+  background: #0A66C2;
+  padding: 8px 20px;
+  border-radius: 100px;
+  border: none;
+  transition: var(--transition);
+  font-size: 0.9rem;
 }
 
 .linkedinBtn:hover {
   background: #084d94;
+  transform: translateY(-2px);
+}
+
+/* Hamburger menu button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-primary);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger.isOpen span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.isOpen span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.isOpen span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Menu Overlay */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  background: var(--bg-primary);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  padding: 100px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mobileNavLink {
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+.mobileNavLink:hover,
+.mobileNavLink.active {
+  color: var(--primary-green);
+}
+
+.mobileLinkedInBtn {
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 700;
   color: #fff;
-  border-color: #084d94;
+  background: #0A66C2;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1rem;
 }
 
 @media (max-width: 900px) {
   .navLinks {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 80px;
+  }
+
+  .container {
+    padding: 0 24px;
+  }
+
+  .signature {
+    font-size: 1.4rem;
+    white-space: nowrap;
+  }
+
+  .desktopActions {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
   }
 }

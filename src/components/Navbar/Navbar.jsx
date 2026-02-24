@@ -16,6 +16,10 @@ const navItems = [
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState('home');
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    const closeMenu = () => setIsMenuOpen(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -53,6 +57,7 @@ const Navbar = () => {
             <div className={styles.container}>
                 <div className={styles.signature}>Selvakumar Arumugam</div>
 
+                {/* Desktop Nav */}
                 <div className={styles.navLinks}>
                     {navLinks.map((link) => (
                         <a
@@ -65,11 +70,55 @@ const Navbar = () => {
                     ))}
                 </div>
 
-                <div className={styles.socials}>
-                    <a href="#" onClick={openLinkedIn} className={`${styles.socialLink} ${styles.linkedinBtn}`}>
+                <div className={styles.desktopActions}>
+                    <a href="#" onClick={openLinkedIn} className={styles.linkedinBtn}>
                         LinkedIn
                     </a>
                 </div>
+
+                {/* Mobile Hamburger Overlay */}
+                <button
+                    className={`${styles.hamburger} ${isMenuOpen ? styles.isOpen : ''}`}
+                    onClick={toggleMenu}
+                    aria-label="Toggle Menu"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                {/* Mobile Menu Overlay */}
+                <AnimatePresence>
+                    {isMenuOpen && (
+                        <motion.div
+                            initial={{ x: '100%' }}
+                            animate={{ x: 0 }}
+                            exit={{ x: '100%' }}
+                            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                            className={styles.mobileMenu}
+                        >
+                            <div className={styles.mobileLinks}>
+                                {navLinks.map((link) => (
+                                    <a
+                                        key={link.id}
+                                        href={link.href}
+                                        onClick={closeMenu}
+                                        className={`${styles.mobileNavLink} ${activeSection === link.id ? styles.active : ''}`}
+                                    >
+                                        {link.name}
+                                    </a>
+                                ))}
+                                <a
+                                    href="#"
+                                    onClick={(e) => { e.preventDefault(); openLinkedIn(); closeMenu(); }}
+                                    className={styles.mobileLinkedInBtn}
+                                >
+                                    LinkedIn
+                                </a>
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
         </nav>
     );
