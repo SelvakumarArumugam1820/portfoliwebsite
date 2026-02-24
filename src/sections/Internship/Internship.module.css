@@ -1,0 +1,130 @@
+.internship {
+    padding: 50px 0 60px;
+    background-color: var(--bg-secondary);
+}
+
+.header {
+    margin-bottom: 64px;
+    max-width: 800px;
+    text-align: right;
+    text-align: left;
+    margin-bottom: 80px;
+}
+
+.preTitle {
+    color: var(--primary-green);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    margin-bottom: 16px;
+}
+
+.title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.title span {
+    color: var(--primary-green);
+}
+
+.container {
+    max-width: 1000px;
+}
+
+.card {
+    background: var(--bg-secondary);
+    padding: 60px;
+    border-radius: 32px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.cardHeader {
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 24px;
+}
+
+.cardHeader h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.company {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: block;
+}
+
+.period {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 40px;
+}
+
+.bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.bullets li {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    position: relative;
+    padding-left: 24px;
+}
+
+.bullets li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    background: var(--border-color);
+    border-radius: 50%;
+}
+
+.websiteLink {
+    display: block;
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    width: fit-content;
+}
+
+.websiteLink:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .header {
+        text-align: left;
+    }
+
+    .card {
+        padding: 32px;
+    }
+
+    .cardHeader h3 {
+        font-size: 1.5rem;
+    }
+}

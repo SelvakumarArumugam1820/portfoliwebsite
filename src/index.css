@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Dancing+Script:wght@700&display=swap');
+
+:root {
+  --primary-green: #00C853;
+  --dark-green: #00843D;
+  --bg-primary: #F5F5F3;
+  --bg-secondary: #FFFFFF;
+  --white: #FFFFFF;
+  --text-primary: #1A1A1A;
+  --text-secondary: #666666;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --font-main: 'Plus Jakarta Sans', sans-serif;
+  --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.app-container {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.section-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 120px 24px;
+}
+
+.alternate-bg {
+  background-color: var(--bg-secondary);
+}
+
+@media (max-width: 768px) {
+  .section-container {
+    padding: 80px 20px;
+  }
+}

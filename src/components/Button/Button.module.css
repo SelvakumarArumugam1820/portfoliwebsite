@@ -1,0 +1,31 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.primary {
+    background: var(--gradient-primary);
+    color: #000;
+}
+
+.primary:hover {
+    box-shadow: 0 0 20px var(--accent-soft);
+}
+
+.secondary {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+}
+
+.secondary:hover {
+    background: var(--glass-border);
+    border-color: var(--accent);
+}

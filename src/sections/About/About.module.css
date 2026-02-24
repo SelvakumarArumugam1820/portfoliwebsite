@@ -1,0 +1,127 @@
+.about {
+    padding: 40px 0 50px;
+    overflow: hidden;
+}
+
+.mainGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.contentSide {
+    max-width: 600px;
+}
+
+.preTitle {
+    color: var(--primary-green);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    margin-bottom: 16px;
+}
+
+.title {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+}
+
+.title span {
+    color: var(--primary-green);
+}
+
+.paragraph {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.valueList {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.valueList li {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.valueList li::before {
+    content: '✔';
+    color: var(--primary-green);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.highlightsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.highlightCard {
+    background: var(--bg-secondary);
+    padding: 28px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.highlightCard:hover {
+    transform: translateX(10px);
+    border-color: var(--primary-green);
+    box-shadow: var(--shadow-md);
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: rgba(0, 200, 83, 0.08);
+    color: var(--primary-green);
+    margin-bottom: 4px;
+}
+
+.highlightCard h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.highlightCard p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+    .mainGrid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .contentSide {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,10 @@
+.magneticWrapper {
+    display: inline-block;
+    padding: 20px;
+    margin: -20px;
+}
+
+.magneticBtn {
+    display: inline-block;
+    transition: transform 0.1s linear;
+}

@@ -1,0 +1,22 @@
+:root {
+    /* Colors - Bright Premium Palette */
+    --color-bg-deep: #0B0F1C;
+    --color-surface: #12182B;
+    --color-green: #00E676;
+    --color-pink: #FF4081;
+    --color-yellow: #FFC107;
+    --color-white: #FFFFFF;
+    --color-border: rgba(255, 255, 255, 0.08);
+
+    /* Gradients */
+    --grad-premium: linear-gradient(135deg, var(--color-green), var(--color-pink));
+    --grad-neon: linear-gradient(90deg, var(--color-green), var(--color-pink));
+
+    /* Fonts */
+    --font-main: 'Inter', sans-serif;
+    --font-logo: 'Dancing Script', cursive;
+
+    /* Shadows & Easing */
+    --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.4);
+    --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+}

@@ -1,0 +1,112 @@
+.projects {
+    padding: 50px 0 60px;
+}
+
+.header {
+    text-align: left;
+    margin-bottom: 80px;
+}
+
+.preTitle {
+    color: var(--primary-green);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-size: 0.8rem;
+    margin-bottom: 16px;
+}
+
+.title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.title span {
+    color: var(--primary-green);
+}
+
+.projectsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 32px;
+}
+
+.projectCard {
+    background: var(--bg-secondary);
+    border-radius: 40px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.projectCard:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-green);
+    box-shadow: var(--shadow-md);
+}
+
+.cardContent {
+    padding: 40px;
+}
+
+.category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--primary-green);
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+}
+
+.cardContent h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.cardContent p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.techStack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.techTag {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    background: var(--bg-primary);
+    padding: 8px 16px;
+    border-radius: 100px;
+    transition: var(--transition);
+}
+
+.projectCard:hover .techTag {
+    color: var(--text-primary);
+}
+
+@media (max-width: 1100px) {
+    .projectsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .cardContent {
+        padding: 32px;
+    }
+
+    .cardContent h3 {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,129 @@
+.dualGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.header {
+    margin-bottom: 50px;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.title span {
+    color: var(--color-green);
+}
+
+.subtitle {
+    color: var(--color-pink);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item {
+    display: flex;
+    gap: 24px;
+}
+
+.marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: var(--color-green);
+    border-radius: 50%;
+    box-shadow: var(--glow-green);
+    z-index: 2;
+}
+
+.line {
+    flex: 1;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--color-green), transparent);
+    margin-top: 5px;
+}
+
+.card {
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.timeBadge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-pink);
+    margin-bottom: 12px;
+}
+
+.role {
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.org {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 15px;
+}
+
+.score {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--color-yellow);
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 800;
+    border-radius: 4px;
+}
+
+.points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.points li {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    position: relative;
+    padding-left: 15px;
+}
+
+.points li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 5px;
+    height: 5px;
+    background: var(--color-green);
+    border-radius: 50%;
+}
+
+@media (max-width: 1024px) {
+    .dualGrid {
+        grid-template-columns: 1fr;
+        gap: 100px;
+    }
+}

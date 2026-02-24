@@ -1,0 +1,22 @@
+:root {
+  /* Colors - Cinematic Palette */
+  --color-green: #00C853;
+  --color-pink: #FF4081;
+  --color-yellow: #FFD600;
+  --color-white: #FFFFFF;
+  --color-bg-deep: #0B0D12;
+  --color-surface: #141821;
+
+  /* Gradients */
+  --grad-neon: linear-gradient(135deg, var(--color-green), var(--color-pink));
+  --grad-glass: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+
+  /* Shadows & Depth */
+  --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.4);
+  --glow-green: 0 0 30px rgba(0, 200, 83, 0.2);
+  --glow-pink: 0 0 30px rgba(255, 64, 129, 0.2);
+
+  /* Transitions */
+  --ease-cinematic: cubic-bezier(0.23, 1, 0.32, 1);
+  --trans-normal: 0.6s var(--ease-cinematic);
+}

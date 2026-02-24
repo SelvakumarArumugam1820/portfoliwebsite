@@ -1,0 +1,24 @@
+.home {
+    display: flex;
+    flex-direction: column;
+}
+
+.projects {
+    background: transparent;
+}
+
+.projectGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.viewMore {
+    margin-top: 56px;
+    display: flex;
+    justify-content: center;
+}
+
+.timeline {
+    background: rgba(255, 255, 255, 0.01);
+}

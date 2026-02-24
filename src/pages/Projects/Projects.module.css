@@ -1,0 +1,40 @@
+.page {
+    padding-top: 100px;
+    background-color: var(--color-bg-deep);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.title {
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 900;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+}
+
+.title span {
+    color: var(--color-green);
+}
+
+.subtitle {
+    color: var(--color-pink);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 40px;
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

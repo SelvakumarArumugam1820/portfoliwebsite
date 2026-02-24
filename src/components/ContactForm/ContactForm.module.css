@@ -1,0 +1,135 @@
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.title span {
+    color: var(--color-green);
+}
+
+.subtitle {
+    color: var(--color-pink);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    margin-bottom: 40px;
+}
+
+.infoCards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.infoCard {
+    display: flex;
+    gap: 20px;
+    padding: 24px;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.infoIcon {
+    font-size: 2rem;
+}
+
+.infoCard h4 {
+    font-size: 0.9rem;
+    color: var(--color-pink);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.infoCard p {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.form {
+    padding: 40px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.inputGroup label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.inputGroup input,
+.inputGroup textarea {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px;
+    border-radius: 12px;
+    color: white;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+    outline: none;
+    border-color: var(--color-green);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 15px rgba(0, 200, 83, 0.1);
+}
+
+.submitBtn {
+    background: var(--color-green);
+    color: white;
+    padding: 18px;
+    border-radius: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s var(--ease-cinematic);
+}
+
+.submitBtn:hover:not(:disabled) {
+    transform: translateY(-5px);
+    filter: brightness(1.1);
+    box-shadow: 0 10px 20px rgba(0, 200, 83, 0.3);
+}
+
+.submitBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 80px;
+    }
+}

@@ -1,0 +1,29 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.intro {
+    grid-column: 1 / -1;
+    margin-bottom: 40px;
+    max-width: 800px;
+}
+
+.sectionHeader {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+
+.sectionHeader span {
+    color: var(--color-green);
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .sectionHeader {
+        text-align: center;
+    }
+}

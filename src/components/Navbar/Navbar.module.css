@@ -1,0 +1,94 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.scrolled {
+  height: 80px;
+  background: rgba(245, 245, 243, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.signature {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  cursor: default;
+}
+
+.navLinks {
+  display: flex;
+  gap: 40px;
+}
+
+.navLink {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: var(--transition);
+  position: relative;
+}
+
+.navLink:hover {
+  color: var(--text-primary);
+}
+
+.navLink.active {
+  color: var(--primary-green);
+}
+
+.navLink.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-green);
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+}
+
+.socialLink {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding: 10px 24px;
+  border: 1.5px solid var(--text-primary);
+  border-radius: 100px;
+  transition: var(--transition);
+}
+
+.socialLink:hover {
+  background: var(--text-primary);
+  color: var(--white);
+}
+
+@media (max-width: 900px) {
+  .navLinks {
+    display: none;
+  }
+}

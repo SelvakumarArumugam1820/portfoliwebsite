@@ -1,0 +1,61 @@
+.topProgress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--grad-primary);
+    transform-origin: 0%;
+    z-index: 1001;
+    box-shadow: 0 0 10px var(--accent-soft);
+}
+
+.scrollBtn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background: var(--bg-card);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border-glass);
+    border-radius: 50%;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: var(--trans-apple);
+}
+
+.scrollBtn:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px var(--accent-soft);
+}
+
+.inner {
+    font-size: 1.5rem;
+    z-index: 2;
+}
+
+.progressCircle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.path {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 4px;
+}
+
+@media (max-width: 768px) {
+    .scrollBtn {
+        bottom: 24px;
+        right: 24px;
+        width: 50px;
+        height: 50px;
+    }
+}
