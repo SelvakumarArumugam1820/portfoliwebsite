@@ -70,7 +70,7 @@ const Contact = () => {
                         </p>
 
                         <div className={styles.contactDetails}>
-                            <ContactItem icon="✉️" label="Email" value="selvakumararumugam2002@gmail.com" link="mailto:selvakumararumugam2002@gmail.com" />
+                            <ContactItem icon="✉️" label="Email" value="selvakumararu1820@gmail.com" link="mailto:selvakumararu1820@gmail.com" />
                             <ContactItem icon="📞" label="Phone" value="(+91) 95246 15684" link="tel:(+91) 95246 15684" />
                             <ContactItem icon="📍" label="Location" value="Tiruchirappalli, Tamil Nadu" />
                         </div>
