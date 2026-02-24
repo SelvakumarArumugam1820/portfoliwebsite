@@ -87,6 +87,18 @@
   color: var(--white);
 }
 
+.linkedinBtn {
+  background: #0A66C2;
+  color: #fff;
+  border-color: #0A66C2;
+}
+
+.linkedinBtn:hover {
+  background: #084d94;
+  color: #fff;
+  border-color: #084d94;
+}
+
 @media (max-width: 900px) {
   .navLinks {
     display: none;

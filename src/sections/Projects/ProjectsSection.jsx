@@ -39,7 +39,10 @@ const Projects = () => {
                 </div>
 
                 <div className={styles.projectsGrid}>
-                    {projectsData.map((project, i) => (
+                    <div className={styles.groupHeader}>
+                        <h3 className={styles.groupTitle}>Professional Projects</h3>
+                    </div>
+                    {projectsData.filter(p => p.type === 'Professional').map((project, i) => (
                         <motion.div
                             key={i}
                             variants={fadeIn('up', 'spring', i * 0.1, 0.8)}
@@ -57,6 +60,41 @@ const Projects = () => {
                                         <span key={idx} className={styles.techTag}>{t}</span>
                                     ))}
                                 </div>
+                                <ul className={styles.impactList}>
+                                    {project.impact.map((point, idx) => (
+                                        <li key={idx}>{point}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </motion.div>
+                    ))}
+
+                    <div className={styles.groupHeader} style={{ marginTop: '40px' }}>
+                        <h3 className={styles.groupTitle}>Academic & Research Projects</h3>
+                    </div>
+                    {projectsData.filter(p => p.type !== 'Professional').map((project, i) => (
+                        <motion.div
+                            key={i}
+                            variants={fadeIn('up', 'spring', i * 0.1, 0.8)}
+                            initial="hidden"
+                            whileInView="show"
+                            viewport={{ once: true }}
+                            className={styles.projectCard}
+                        >
+                            <div className={styles.cardContent}>
+                                <div className={styles.category}>{project.category}</div>
+                                <h3>{project.title}</h3>
+                                <p>{project.description}</p>
+                                <div className={styles.techStack}>
+                                    {project.tags.map((t, idx) => (
+                                        <span key={idx} className={styles.techTag}>{t}</span>
+                                    ))}
+                                </div>
+                                <ul className={styles.impactList}>
+                                    {project.impact.map((point, idx) => (
+                                        <li key={idx}>{point}</li>
+                                    ))}
+                                </ul>
                             </div>
                         </motion.div>
                     ))}

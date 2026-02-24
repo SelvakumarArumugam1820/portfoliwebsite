@@ -1,11 +1,11 @@
 .hero {
-    min-height: 90vh;
+    min-height: auto;
     display: flex;
     align-items: center;
     position: relative;
     overflow: hidden;
     padding-top: 80px;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
     background-color: var(--bg-primary);
 }
 
@@ -28,8 +28,9 @@
 }
 
 .greeting {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
     color: var(--text-secondary);
     margin-bottom: 24px;
     display: flex;
@@ -84,14 +85,14 @@
 }
 
 .primaryBtn {
-    padding: 20px 40px;
+    padding: 10px 22px;
     background: var(--text-primary);
     color: var(--white) !important;
     text-decoration: none;
     font-weight: 700;
-    border-radius: 100px;
+    border-radius: 8px;
     transition: var(--transition);
-    font-size: 1rem;
+    font-size: 15px;
 }
 
 .primaryBtn:hover {
@@ -101,15 +102,15 @@
 }
 
 .secondaryBtn {
-    padding: 20px 40px;
+    padding: 10px 22px;
     border: 1.5px solid var(--border-color);
     color: var(--text-primary) !important;
     text-decoration: none;
     font-weight: 700;
-    border-radius: 100px;
+    border-radius: 8px;
     transition: var(--transition);
     background: var(--bg-secondary);
-    font-size: 1rem;
+    font-size: 15px;
 }
 
 .secondaryBtn:hover {
@@ -190,6 +191,10 @@
 }
 
 @media (max-width: 1440px) {
+    .greeting {
+        font-size: 17px;
+    }
+
     .headerTitle {
         font-size: 50px;
     }
@@ -231,13 +236,27 @@
 }
 
 @media (max-width: 768px) {
+    .hero {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+
+    .greeting {
+        font-size: 16px;
+    }
+
     .headerTitle {
         font-size: 40px;
     }
 
+    .about {
+        margin-bottom: 18px;
+    }
+
     .statsGrid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
     }
 
     .statItem h3 {
@@ -251,14 +270,20 @@
     .primaryBtn,
     .secondaryBtn {
         text-align: center;
+        width: 100%;
     }
 
     .portraitArea {
         width: 300px;
+        margin-bottom: 0;
     }
 }
 
 @media (max-width: 480px) {
+    .greeting {
+        font-size: 15px;
+    }
+
     .headerTitle {
         font-size: 32px;
     }

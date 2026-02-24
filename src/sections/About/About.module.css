@@ -1,5 +1,5 @@
 .about {
-    padding: 40px 0 50px;
+    padding: 80px 0;
     overflow: hidden;
 }
 
@@ -123,5 +123,11 @@
 
     .contentSide {
         max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding: 60px 0;
     }
 }

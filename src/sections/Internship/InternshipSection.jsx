@@ -29,9 +29,9 @@ const Internship = () => {
                         <div className={styles.cardHeader}>
                             <h3>Data Science Virtual Internship</h3>
                             <span className={styles.company}>Ceasura Technologies, Chennai</span>
-                            <a href="https://ceasura.in" target="_blank" rel="noreferrer" className={styles.websiteLink}>
+                            {/* <a href="https://ceasura.in" target="_blank" rel="noreferrer" className={styles.websiteLink}>
                                 Visit Website
-                            </a>
+                            </a> */}
                         </div>
 
                         <div className={styles.period}>
@@ -39,8 +39,8 @@ const Internship = () => {
                         </div>
 
                         <ul className={styles.bullets}>
-                            <li>Worked on dataset analysis fundamentals.</li>
-                            <li>Explored predictive modeling basics.</li>
+                            <li>Specialized in dataset analysis fundamentals and data preprocessing techniques.</li>
+                            <li>Explored predictive modeling basics and statistical analysis during the virtual tenure.</li>
                         </ul>
                     </motion.div>
                 </div>

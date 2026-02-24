@@ -1,7 +1,7 @@
 .education {
     position: relative;
     background: var(--bg-primary);
-    padding: 120px 0;
+    padding: 80px 0;
 }
 
 .header {
@@ -29,9 +29,15 @@
     color: var(--primary-green);
 }
 
-.grid {
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.mainGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 32px;
 }
 
@@ -44,6 +50,16 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+}
+
+.primaryCard {
+    border: 2px solid var(--primary-green);
+    box-shadow: var(--shadow-md);
+}
+
+.secondaryCard {
+    border: 1px solid var(--border-color);
+    box-shadow: none;
 }
 
 .card:hover {
@@ -68,7 +84,15 @@
     flex: 1;
 }
 
-.mainInfo h3 {
+.primaryTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+}
+
+.secondaryTitle {
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--text-primary);
@@ -97,22 +121,57 @@
     color: var(--primary-green);
 }
 
-.grade {
+.gradeBadge {
     font-size: 0.85rem;
     font-weight: 700;
     color: var(--text-primary);
     background: var(--bg-primary);
-    padding: 6px 12px;
-    border-radius: 8px;
+    padding: 6px 14px;
+    border-radius: 100px;
+    border: 1px solid var(--border-color);
+}
+
+.minimalBlock {
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    padding: 24px 32px;
+    opacity: 0.8;
+}
+
+.minimalContent {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.minimalIcon {
+    font-size: 1.5rem;
+}
+
+.minimalInfo h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.minimalInfo p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 500;
 }
 
 @media (max-width: 1024px) {
-    .grid {
+    .mainGrid {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 768px) {
+    .education {
+        padding: 60px 0;
+    }
+
     .title {
         font-size: 2.2rem;
     }
@@ -122,6 +181,14 @@
     }
 
     .cardHeader {
+        gap: 16px;
+    }
+
+    .minimalBlock {
+        padding: 20px;
+    }
+
+    .minimalContent {
         gap: 16px;
     }
 }

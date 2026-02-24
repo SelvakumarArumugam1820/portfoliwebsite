@@ -32,15 +32,36 @@ const ExperienceSection = () => {
                                     <div className={styles.cardHeader}>
                                         <div className={styles.companyInfo}>
                                             <h3>{exp.role}</h3>
-                                            <p>{exp.company}</p>
+                                            <p>
+                                                <a href={exp.website} target="_blank" rel="noopener noreferrer" className={styles.companyLink}>
+                                                    {exp.company}
+                                                </a>
+                                            </p>
                                         </div>
-                                        <span className={styles.period}>{exp.period}</span>
+                                        <div className={styles.periodBadge}>
+                                            <span>🗓️ {exp.period}</span>
+                                        </div>
                                     </div>
-                                    <ul className={styles.bullets}>
-                                        {exp.bullets.map((bullet, idx) => (
-                                            <li key={idx}>{bullet}</li>
+
+                                    <div className={styles.divider}></div>
+
+                                    <div className={styles.projectBlocks}>
+                                        {exp.projects.map((project, pIdx) => (
+                                            <div key={pIdx} className={styles.projectBlock}>
+                                                <h4 className={styles.projectTitle}>{project.title}</h4>
+                                                <div className={styles.techTags}>
+                                                    {project.tags.map((tag, tIdx) => (
+                                                        <span key={tIdx} className={styles.techTag}>{tag}</span>
+                                                    ))}
+                                                </div>
+                                                <ul className={styles.bullets}>
+                                                    {project.bullets.map((bullet, bIdx) => (
+                                                        <li key={bIdx}>{bullet}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
                                         ))}
-                                    </ul>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>

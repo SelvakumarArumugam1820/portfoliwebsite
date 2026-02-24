@@ -41,8 +41,8 @@ const Hero = () => {
                         className={styles.greeting}
                     >
                         Hello, I'm Selvakumar <motion.span
-                            animate={{ rotate: [0, 15, 0] }}
-                            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                            animate={{ rotate: [0, 18, 0] }}
+                            transition={{ duration: 1, repeat: Infinity, ease: 'easeInOut' }}
                             style={{ display: 'inline-block', transformOrigin: '70% 80%' }}
                         >👋</motion.span>
                     </motion.div>

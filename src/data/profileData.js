@@ -4,7 +4,7 @@ export const profileData = {
   location: "Tiruchirappalli, Tamil Nadu, India",
   email: "selvakumararu1820@gmail.com",
   phone: "(+91) 95246 15684",
-  linkedin: "www.linkedin.com/in/selvakumar-arumugam2002",
+  linkedin: "https://www.linkedin.com/in/selvakumar-arumugam2002",
   profilePhoto: "/src/assets/profile.png",
   objective: "Flutter Mobile Developer and Full Stack Developer skilled in building mobile apps with Flutter and integrating .NET Web APIs with PostgreSQL. Seeking a challenging role to contribute to scalable products and grow with a dynamic team.",
 

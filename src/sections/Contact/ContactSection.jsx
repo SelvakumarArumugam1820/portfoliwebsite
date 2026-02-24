@@ -22,10 +22,12 @@ const ContactItem = ({ icon, label, value, link }) => (
 const Contact = () => {
     const form = useRef();
     const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
 
     const sendEmail = (e) => {
         e.preventDefault();
         setLoading(true);
+        setSuccess(false);
 
         emailjs.sendForm(
             'service_f41jxtr',
@@ -34,12 +36,17 @@ const Contact = () => {
             'Y6H8vJp_yidH68A9s'
         ).then(() => {
             setLoading(false);
-            toast.success('Message sent successfully!');
+            setSuccess(true);
+            toast.success('Message sent! I will get back to you soon.', {
+                duration: 5000,
+                icon: '🚀',
+            });
             form.current.reset();
+            setTimeout(() => setSuccess(false), 5000);
         }, (error) => {
             setLoading(false);
-            console.log(error.text);
-            toast.error('Failed to send message.');
+            console.error('EmailJS Error Details:', error);
+            toast.error(`Failed to send message: ${error.text || 'Unknown Error'}`);
         });
     };
 
@@ -76,21 +83,51 @@ const Contact = () => {
                         viewport={{ once: true }}
                         className={styles.formSide}
                     >
-                        <form ref={form} onSubmit={sendEmail} className={styles.form}>
+                        <form
+                            ref={form}
+                            onSubmit={sendEmail}
+                            className={`${styles.form} ${success ? styles.successForm : ''}`}
+                        >
                             <div className={styles.inputGroup}>
                                 <label htmlFor="user_name">Full Name</label>
-                                <input type="text" id="user_name" name="user_name" placeholder="Selvakumar Arumugam" required />
+                                <input
+                                    type="text"
+                                    id="user_name"
+                                    name="from_name"
+                                    placeholder="ex: Selvakumar Arumugam"
+                                    required
+                                />
                             </div>
                             <div className={styles.inputGroup}>
                                 <label htmlFor="user_email">Email Address</label>
-                                <input type="email" id="user_email" name="user_email" placeholder="example@email.com" required />
+                                <input
+                                    type="email"
+                                    id="user_email"
+                                    name="from_email"
+                                    placeholder="example@email.com"
+                                    required
+                                />
                             </div>
                             <div className={styles.inputGroup}>
                                 <label htmlFor="message">Message</label>
-                                <textarea id="message" name="message" rows="6" placeholder="Your Message..." required></textarea>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="5"
+                                    placeholder="Your Message..."
+                                    required
+                                ></textarea>
                             </div>
-                            <button type="submit" disabled={loading} className={styles.submitBtn}>
-                                {loading ? 'Sending...' : 'Send Message'}
+                            <button
+                                type="submit"
+                                disabled={loading}
+                                className={`${styles.submitBtn} ${loading ? styles.loading : ''}`}
+                            >
+                                {loading ? (
+                                    <span className={styles.btnContent}>
+                                        <span className={styles.spinner}></span> Sending...
+                                    </span>
+                                ) : 'Send Message'}
                             </button>
                         </form>
                     </motion.div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { HiMail, HiPhone, HiLocationMarker } from 'react-icons/hi';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { profileData } from '../../data/profileData';
+import { openLinkedIn } from '../../utils/linkedinUtils';
 import styles from './SocialLinks.module.css';
 
 const SocialLinks = ({ vertical = false }) => {
@@ -13,7 +14,7 @@ const SocialLinks = ({ vertical = false }) => {
             <a href={`tel:${profileData.phone}`} className={styles.socialItem} title="Phone">
                 <HiPhone /> <span>{profileData.phone}</span>
             </a>
-            <a href={profileData.linkedin} target="_blank" rel="noopener noreferrer" className={styles.socialItem} title="LinkedIn">
+            <a href="#" onClick={openLinkedIn} className={styles.socialItem} title="LinkedIn">
                 <FaLinkedin /> <span>LinkedIn</span>
             </a>
             <div className={styles.socialItem}>

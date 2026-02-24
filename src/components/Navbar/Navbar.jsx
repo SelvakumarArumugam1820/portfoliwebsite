@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { openLinkedIn } from '../../utils/linkedinUtils';
 import styles from './Navbar.module.css';
 
 const navItems = [
@@ -20,7 +21,7 @@ const Navbar = () => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
 
-            const sections = ['home', 'about', 'skills', 'experience', 'projects', 'internship', 'contact'];
+            const sections = ['home', 'about', 'skills', 'internship', 'experience', 'projects', 'education', 'contact'];
             const current = sections.find(section => {
                 const element = document.getElementById(section);
                 if (element) {
@@ -40,16 +41,17 @@ const Navbar = () => {
         { name: 'Home', href: '#home', id: 'home' },
         { name: 'About', href: '#about', id: 'about' },
         { name: 'Skills', href: '#skills', id: 'skills' },
+        { name: 'Internship', href: '#internship', id: 'internship' },
         { name: 'Experience', href: '#experience', id: 'experience' },
         { name: 'Projects', href: '#projects', id: 'projects' },
-        { name: 'Internship', href: '#internship', id: 'internship' },
+        { name: 'Education', href: '#education', id: 'education' },
         { name: 'Contact', href: '#contact', id: 'contact' },
     ];
 
     return (
         <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
             <div className={styles.container}>
-                <div className={styles.signature}>Selvakumar</div>
+                <div className={styles.signature}>Selvakumar Arumugam</div>
 
                 <div className={styles.navLinks}>
                     {navLinks.map((link) => (
@@ -64,7 +66,7 @@ const Navbar = () => {
                 </div>
 
                 <div className={styles.socials}>
-                    <a href="https://linkedin.com" target="_blank" rel="noreferrer" className={styles.socialLink}>
+                    <a href="#" onClick={openLinkedIn} className={`${styles.socialLink} ${styles.linkedinBtn}`}>
                         LinkedIn
                     </a>
                 </div>

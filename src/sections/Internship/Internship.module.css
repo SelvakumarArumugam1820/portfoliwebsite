@@ -1,5 +1,5 @@
 .internship {
-    padding: 50px 0 60px;
+    padding: 80px 0;
     background-color: var(--bg-secondary);
 }
 
@@ -116,6 +116,10 @@
 }
 
 @media (max-width: 768px) {
+    .internship {
+        padding: 60px 0;
+    }
+
     .header {
         text-align: left;
     }

@@ -1,5 +1,5 @@
 .footer {
-    padding: 100px 0 60px;
+    padding: 60px 0;
     background: var(--bg-primary);
     border-top: 1px solid var(--border-color);
 }
@@ -7,39 +7,39 @@
 .content {
     display: flex;
     flex-direction: column;
-    gap: 80px;
-}
-
-.top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
 }
 
 .logo {
-    font-family: 'Dancing Script', cursive;
-    font-size: 2.2rem;
-    font-weight: 700;
+    font-size: 1.8rem;
+    font-weight: 800;
     color: var(--text-primary);
-    margin-bottom: 8px;
+    margin-bottom: 4px;
+    letter-spacing: -0.02em;
 }
 
-.tagline {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    font-weight: 500;
+.role {
+    font-size: 1rem;
+    color: var(--primary-green);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .social {
     display: flex;
-    gap: 40px;
+    align-items: center;
+    gap: 20px;
+    margin: 8px 0;
 }
 
 .social a {
     text-decoration: none;
     font-weight: 700;
     color: var(--text-primary);
-    font-size: 1rem;
+    font-size: 0.95rem;
     transition: var(--transition);
 }
 
@@ -47,33 +47,34 @@
     color: var(--primary-green);
 }
 
+.dot {
+    color: var(--border-color);
+    font-weight: 900;
+}
+
 .bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 60px;
+    padding-top: 24px;
     border-top: 1px solid var(--border-color);
+    width: 100%;
+    max-width: 400px;
+}
+
+.bottom p {
     color: var(--text-secondary);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
-.built {
-    color: var(--text-primary);
-}
-
-@media (max-width: 900px) {
-    .top {
-        flex-direction: column;
-        gap: 40px;
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 0;
     }
-}
 
-@media (max-width: 600px) {
-    .bottom {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-        padding-top: 40px;
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .role {
+        font-size: 0.85rem;
     }
 }
