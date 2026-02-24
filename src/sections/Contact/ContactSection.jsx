@@ -64,8 +64,8 @@ const Contact = () => {
 
                         <div className={styles.contactDetails}>
                             <ContactItem icon="✉️" label="Email" value="selvakumararumugam2002@gmail.com" link="mailto:selvakumararumugam2002@gmail.com" />
-                            <ContactItem icon="📞" label="Phone" value="+91 8807849884" link="tel:+918807849884" />
-                            <ContactItem icon="📍" label="Location" value="Coimbatore, Tamil Nadu" />
+                            <ContactItem icon="📞" label="Phone" value="(+91) 95246 15684" link="tel:(+91) 95246 15684" />
+                            <ContactItem icon="📍" label="Location" value="Tiruchirappalli, Tamil Nadu" />
                         </div>
                     </motion.div>
 
