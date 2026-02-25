@@ -96,12 +96,12 @@ const Hero = () => {
                             <p>Years Experience</p>
                         </motion.div>
                         <motion.div variants={fadeIn('up', 'spring', 0, 0.8)} className={styles.statItem}>
-                            <h3>10+</h3>
-                            <p>Projects Finished</p>
+                            <h3>3+</h3>
+                            <p>Production Projects</p>
                         </motion.div>
                         <motion.div variants={fadeIn('up', 'spring', 0, 0.8)} className={styles.statItem}>
-                            <h3>5+</h3>
-                            <p>Happy Clients</p>
+                            <h3>10+</h3>
+                            <p> Features Implemented</p>
                         </motion.div>
                     </motion.div>
                 </div>
