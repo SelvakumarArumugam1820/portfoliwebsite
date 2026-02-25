@@ -63,7 +63,7 @@ const Hero = () => {
                         animate="show"
                         className={styles.techStackTag}
                     >
-                        Flutter • .NET Web API • PostgreSQL
+                        Flutter • .NET • PostgreSQL
                     </motion.p>
 
                     <motion.p
