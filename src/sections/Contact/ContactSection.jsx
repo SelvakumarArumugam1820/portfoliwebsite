@@ -1,6 +1,5 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import emailjs from '@emailjs/browser';
 import toast, { Toaster } from 'react-hot-toast';
 import styles from './Contact.module.css';
 import { fadeIn } from '../../animations/framerConfig';
@@ -20,35 +19,61 @@ const ContactItem = ({ icon, label, value, link }) => (
 );
 
 const Contact = () => {
-    const form = useRef();
+    const [formData, setFormData] = useState({
+        from_name: '',
+        from_email: '',
+        message: ''
+    });
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
 
-    const sendEmail = (e) => {
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const sendEmail = async (e) => {
         e.preventDefault();
         setLoading(true);
         setSuccess(false);
 
-        emailjs.sendForm(
-            'service_f41jxtr',
-            'template_unb2itf',
-            form.current,
-            'Y6H8vJp_yidH68A9s'
-        ).then(() => {
-            setLoading(false);
-            setSuccess(true);
-            toast.success('Message sent! I will get back to you soon.', {
-                duration: 5000,
-                icon: '🚀',
+        const formDataToSubmit = new FormData();
+        formDataToSubmit.append("access_key", "b467c9ab-6830-4eae-b869-021eaddea78e");
+        formDataToSubmit.append("name", formData.from_name);
+        formDataToSubmit.append("email", formData.from_email);
+        formDataToSubmit.append("message", formData.message);
+        formDataToSubmit.append("subject", "New Portfolio Message");
+        formDataToSubmit.append("from_name", "Portfolio Contact Form");
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formDataToSubmit
             });
-            form.current.reset();
-            setTimeout(() => setSuccess(false), 5000);
-        }, (error) => {
+
+            const data = await response.json();
+
+            if (data.success) {
+                setLoading(false);
+                setSuccess(true);
+                toast.success('Message sent! I will get back to you soon.', {
+                    duration: 5000,
+                    icon: '🚀',
+                });
+                setFormData({ from_name: '', from_email: '', message: '' });
+                setTimeout(() => setSuccess(false), 5000);
+            } else {
+                setLoading(false);
+                console.warn("Web3Forms Submission Failed:", data);
+                toast.error(`System Error: ${data.message || 'Submission rejected'}`);
+            }
+        } catch (error) {
             setLoading(false);
-            console.error('EmailJS Error Details:', error);
-            toast.error(`Failed to send message: ${error.text || 'Unknown Error'}`);
-        });
+            console.error("Network/CORS Error during submission:", error);
+            toast.error("Signal lost. Check your connection or check console for details.");
+        }
     };
+
+
 
     return (
         <section className={`${styles.contact} contact alternate-bg`} id="contact">
@@ -84,7 +109,6 @@ const Contact = () => {
                         className={styles.formSide}
                     >
                         <form
-                            ref={form}
                             onSubmit={sendEmail}
                             className={`${styles.form} ${success ? styles.successForm : ''}`}
                         >
@@ -94,6 +118,8 @@ const Contact = () => {
                                     type="text"
                                     id="user_name"
                                     name="from_name"
+                                    value={formData.from_name}
+                                    onChange={handleChange}
                                     placeholder="ex: Selvakumar Arumugam"
                                     required
                                 />
@@ -104,6 +130,8 @@ const Contact = () => {
                                     type="email"
                                     id="user_email"
                                     name="from_email"
+                                    value={formData.from_email}
+                                    onChange={handleChange}
                                     placeholder="example@email.com"
                                     required
                                 />
@@ -113,11 +141,14 @@ const Contact = () => {
                                 <textarea
                                     id="message"
                                     name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
                                     rows="5"
                                     placeholder="Your Message..."
                                     required
                                 ></textarea>
                             </div>
+
                             <button
                                 type="submit"
                                 disabled={loading}
