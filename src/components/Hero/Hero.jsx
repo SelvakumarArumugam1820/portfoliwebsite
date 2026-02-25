@@ -81,8 +81,8 @@ const Hero = () => {
                         animate="show"
                         className={styles.ctaGroup}
                     >
-                        <a href="#projects" className={styles.primaryBtn}>Let's Talk</a>
-                        <a href="#about" className={styles.secondaryBtn}>View Projects</a>
+                        <a href="#contact" className={styles.primaryBtn}>Let's Talk</a>
+                        <a href="#projects" className={styles.secondaryBtn}>View Projects</a>
                     </motion.div>
 
                     <motion.div
